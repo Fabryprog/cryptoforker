@@ -101,6 +101,10 @@ input[type="button"] {
   margin: 40px;
 }
 
+.coins, .partners {
+  padding: 10px;
+}
+
 .coins-panel {
   background-color: #65567a;
   min-height: 150px;

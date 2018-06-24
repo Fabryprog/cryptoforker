@@ -7,4 +7,5 @@ URLs:
 
 * https://www.cryptoforker.info
 * https://cryptoforker.github.io/
-URLs: https://cryptoforker.github.io/
+
+

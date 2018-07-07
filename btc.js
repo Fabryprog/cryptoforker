@@ -34,7 +34,7 @@ function bitcoin() {
 
 		row = TABLE_ROW;
       row = row.replace("$symbol", "<img src=\"media/bcc.jpg\" class=\"symbol-mini\"/>");
-      row = row.replace("$balance", data + " BCC");
+      row = row.replace("$balance", Number(data/100000000) + " BCC");
       row = row.replace("$name", "BitCoin Cash");
 
       if(data == 0) {

@@ -3,9 +3,20 @@
 A simple site to check your coins on forked project
 
 
-URLs: 
+URLs: https://cryptoforker.eye.rs/
 
-* https://www.cryptoforker.info
-* https://cryptoforker.github.io/
 
+# DEVELOP
+
+To run site locally you can use:
+
+## Docker
+
+```
+docker run --name some-nginx -p 80:80 -v $(PWD)/cryptoforker/:/usr/share/nginx/html:ro -d nginx
+```
+
+## NodeJS
+
+(TODO)
 

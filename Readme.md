@@ -3,7 +3,7 @@
 A simple site to check your coins on forked project
 
 
-URLs: http://cryptoforker.eye.rs/
+URLs: https://yuppiedevs.github.io/cryptoforker/
 
 
 # DEVELOP

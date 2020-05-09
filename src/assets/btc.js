@@ -1,6 +1,13 @@
+//import axios from "./js/axios.min.js";
+
+/* axios.get("data/btc.json").then((resp) => {
+  fillSelect(resp.data, addr, "bitcoin");
+}); */
+
 function fillSelect(data, addr, coin_type) {
   $.each(data, function (i, item) {
     json_section = "item.parentcoin." + coin_type + ".coin";
+    console.log(json_section);
     jQuery.get(json_section + addr, function (data) {
       console.log(data);
     });
@@ -9,16 +16,45 @@ function fillSelect(data, addr, coin_type) {
 
 function main() {
   var addr = $("#bitcoinAddr").val() || $("#ethereumAddr").val();
+  if (!("fetch" in window)) {
+    alert(
+      "Non hai di un browser di ultima generazione,  porocedura interrotta"
+    );
+  }
+
   if (addr && addr != "") {
-    $.getJSON(
+    fetch("https://github.com/simooooone/cryptoforker/data/btc.json")
+      .then((response) => response.json())
+      .then((data) => fillSelect(data, addr, "bitcoin"))
+      .catch((err) => {
+        console.log(err);
+      });
+
+    /*     $.getJSON(
       "https://github.com/simooooone/cryptoforker/data/btc.json",
-      null,
+      { format: "json" },
       function (data) {
         fillSelect(data, addr, "bitcoin");
       }
-    );
+    ); */
   }
 }
+/*   $.ajax({
+                              url:
+                                "https://github.com/simooooone/cryptoforker/data/btc.json",
+                              data: data,
+                              type: "GET",
+                              crossDomain: true,
+                              dataType: "jsonp",
+                              success: function () {
+                                fillSelect(data, addr, "bitcoin");
+                              },
+                              error: function () {
+                                alert("Failed!");
+                              },
+                              beforeSend: setHeader,
+                            });
+                          } */
 /* 
 function bitcoin() {
   var TABLE_ROW =

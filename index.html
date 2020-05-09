@@ -1,110 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Crypto Forker - Check and find your forked coin</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <title>Crypto Forker - Check and find your forked coin</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-  <script src="btc.js"></script>
-  <script src="eth.js"></script>
-
-</head>
-<body>
-  <div class="container">
-    <div class="row">
+    <script src="btc.js"></script>
+    <script src="eth.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
         <div class="col-sm-2">
-            <img id="logo" src="media/logo.png" />
+          <img id="logo" src="media/logo.png" />
         </div>
-    </div>
-    <hr/>
-    <div class="row">
+      </div>
+      <hr />
+      <div class="row">
         <div class="col-lg">
-           <h2 class="center">Check and find your forked coin</h2>
-           <p class="center"><b>It's easy and free!</b></p>
-           <p class="center">Insert your <u>public</u> wallet address in the search field to locate your coins</p>
+          <h2 class="center">Check and find your forked coin</h2>
+          <p class="center"><b>It's easy and free!</b></p>
+          <p class="center">
+            Insert your <u>public</u> wallet address in the search field to
+            locate your coins
+          </p>
         </div>
-    </div>
-    <div class="row">
-      <!-- BITCOIN PANEL -->
-      <div class="col-md panel">
-        <div class="row">
+      </div>
+      <div class="row">
+        <!-- BITCOIN PANEL -->
+        <div class="col-md panel">
+          <div class="row">
             <div class="col-lg center logo-container">
-              <img src="media/bitcoin.png" id="logo-bitcoin"/>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="form-group">
-              <input type="text" required id="bitcoinAddr" placeholder="Put here your PUBLIC address" />
+              <img src="media/bitcoin.png" id="logo-bitcoin" />
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <input type="button" value="SEARCH" onclick="bitcoin();"/>
-            </div>
-          </div>
-        </div>
-        <hr/>
-        <div class="row">
-          <div class="col-lg">
-            <table class="table" id="bitcoin-result">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th> <!-- nome -->
-                  <th scope="col">Symbol</th><!-- simbolo -->
-                  <th scope="col">Balance</th><!-- balance -->
-                  <th scope="col">Link</th><!-- link -->
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </div> <!-- END BITCOIN PANEL -->
-      <!-- ETHEREUM PANEL -->
-      <div class="col-md panel">
-        <div class="row">
-            <div class="col-lg center logo-container">
-              <img src="media/ethereum.png" id="logo-ethereum"/>
-            </div>
-        </div>
-        <div class="row">
+          <div class="row">
             <div class="col-md-8">
               <div class="form-group">
-                <input type="text" required id="ethereumAddr" placeholder="Put here your PUBLIC address" />
+                <input
+                  type="text"
+                  required
+                  id="bitcoinAddr"
+                  placeholder="Put here your PUBLIC address"
+                />
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <input type="button" value="SEARCH" onclick="ethereum();"/>
+                <input type="button" value="SEARCH" onclick="main();" />
               </div>
             </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg">
+              <table class="table" id="bitcoin-result">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <!-- nome -->
+                    <th scope="col">Symbol</th>
+                    <!-- simbolo -->
+                    <th scope="col">Balance</th>
+                    <!-- balance -->
+                    <th scope="col">Link</th>
+                    <!-- link -->
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
         </div>
-        <hr/>
-        <div class="row">
-          <div class="col-lg">
-            <table class="table" id="ethereum-result">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th> <!-- nome -->
-                  <th scope="col">Symbol</th><!-- simbolo -->
-                  <th scope="col">Balance</th><!-- balance -->
-                  <th scope="col">Link</th><!-- link -->
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+        <!-- END BITCOIN PANEL -->
+        <!-- ETHEREUM PANEL -->
+        <div class="col-md panel">
+          <div class="row">
+            <div class="col-lg center logo-container">
+              <img src="media/ethereum.png" id="logo-ethereum" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group">
+                <input
+                  type="text"
+                  required
+                  id="ethereumAddr"
+                  placeholder="Put here your PUBLIC address"
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="button" value="SEARCH" onclick="ethereum();" />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg">
+              <table class="table" id="ethereum-result">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <!-- nome -->
+                    <th scope="col">Symbol</th>
+                    <!-- simbolo -->
+                    <th scope="col">Balance</th>
+                    <!-- balance -->
+                    <th scope="col">Link</th>
+                    <!-- link -->
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <hr/>
+      <hr />
 
-    <div class="row coins-panel">
-      <div class="col-lg">
+      <div class="row coins-panel">
+        <div class="col-lg">
           <div class="row">
             <div class="col-lg">
               <h2 class="center coins-text">Supported Coins</h2>
@@ -112,100 +146,162 @@
           </div>
           <div class="row">
             <div class="col-md-2 col-sm-6 coins center">
-                <img src="media/btg.png" border="0" class="coins-logo" />
+              <img src="media/btg.png" border="0" class="coins-logo" />
             </div>
-            <div class="col-md-2 col-sm-6  coins center">
-                <img src="media/bcc.jpg" border="0" class="coins-logo" />
+            <div class="col-md-2 col-sm-6 coins center">
+              <img src="media/bcc.jpg" border="0" class="coins-logo" />
             </div>
-            <div class="col-md-2 col-sm-6  coins center">
-                <img src="media/bcd.png" border="0" class="coins-logo" />
+            <div class="col-md-2 col-sm-6 coins center">
+              <img src="media/bcd.png" border="0" class="coins-logo" />
             </div>
-            <div class="col-md-2 col-sm-6  coins center">
-                <img src="media/btx.png" border="0" class="coins-logo" />
+            <div class="col-md-2 col-sm-6 coins center">
+              <img src="media/btx.png" border="0" class="coins-logo" />
             </div>
-            <div class="col-md-2 col-sm-6  coins center">
-                <img src="media/btcp.png" border="0" class="coins-logo" />
+            <div class="col-md-2 col-sm-6 coins center">
+              <img src="media/btcp.png" border="0" class="coins-logo" />
             </div>
-            <div class="col-md-2 col-sm-6  coins center">
-                <img src="media/etc.png" border="0" class="coins-logo" />
+            <div class="col-md-2 col-sm-6 coins center">
+              <img src="media/etc.png" border="0" class="coins-logo" />
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row partners-panel">
+        <div class="col-lg">
+          <div class="row">
+            <div class="col-lg">
+              <h2 class="center partners-text">Block Explorer</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sx-6 partners center">
+              <a href="https://blockdozer.com/" target="_blank"
+                ><img
+                  src="media/btgexplorer.png"
+                  border="0"
+                  class="partners-logo"
+              /></a>
+            </div>
+            <div class="col-md-4 col-sx-6 partners center">
+              <a href="https://btgexp.com/" target="_blank"
+                ><img
+                  src="media/blockdozer.png"
+                  border="0"
+                  class="partners-logo"
+              /></a>
+            </div>
+            <div class="col-md-4 col-sx-6 partners center">
+              <a href="https://gastracker.io/" target="_blank"
+                ><img
+                  src="media/gastracker.png"
+                  border="0"
+                  class="partners-logo"
+              /></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 partners center">
+              <a href="http://explorer.btcd.io/#/" target="_blank"
+                ><img
+                  src="media/bcdexplorer.png"
+                  border="0"
+                  class="partners-logo"
+              /></a>
+            </div>
+            <div class="col-sm-6 partners center">
+              <a href="https://explorer.btcprivate.org/" target="_blank"
+                ><img
+                  src="media/bitcoin-private.png"
+                  border="0"
+                  class="partners-logo"
+              /></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg">
+              <h2 class="center partners-text">Developed By</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm partners center">
+              <a
+                href="https://github.com/YuppieDevs/"
+                target="_blank"
+                alt="YuppieDevs - Community"
+                ><img
+                  style="width:80px; height: :auto"
+                  src="https://yuppiedevs.github.io/assets/img/brand/yLogo.png"
+                  border="0"
+                  class="partners-logo"
+              /></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg">
+              <h2 class="center partners-text">Hosted By</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm partners center">
+              <a
+                href="https://github.com/YuppieDevs/cryptoforker.github.io"
+                target="_blank"
+                alt="HOSTED BY GitHub Pages"
+                ><img
+                  src="media/githubpages.png"
+                  border="0"
+                  class="partners-logo"
+              /></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg">
+              <!-- empty-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg footer">
+          <!-- empty -->
         </div>
       </div>
     </div>
+    <!-- content -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <div class="row partners-panel">
-		<div class="col-lg">
-			<div class="row">
-				<div class="col-lg">
-					<h2 class="center partners-text">Block Explorer</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sx-6 partners center">
-					<a href="https://blockdozer.com/" target="_blank"><img src="media/btgexplorer.png" border="0" class="partners-logo" /></a>
-				</div>
-				<div class="col-md-4 col-sx-6 partners center">
-					<a href="https://btgexp.com/" target="_blank"><img src="media/blockdozer.png" border="0" class="partners-logo" /></a>
-				</div>
-				<div class="col-md-4 col-sx-6 partners center">
-					<a href="https://gastracker.io/" target="_blank"><img src="media/gastracker.png" border="0" class="partners-logo" /></a>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6 partners center">
-					<a href="http://explorer.btcd.io/#/" target="_blank"><img src="media/bcdexplorer.png" border="0" class="partners-logo" /></a>
-				</div>
-				<div class="col-sm-6 partners center">
-					<a href="https://explorer.btcprivate.org/" target="_blank"><img src="media/bitcoin-private.png" border="0" class="partners-logo" /></a>
-				</div>
-			</div>
-      <div class="row">
-				<div class="col-lg">
-				  <h2 class="center partners-text">Developed By</h2>
-				</div>
-			</div>
-			<div class="row">
-			  <div class="col-sm partners center">
-				  <a href="https://github.com/YuppieDevs/" target="_blank" alt="YuppieDevs - Community"><img style="width:80px; height: :auto" src="https://yuppiedevs.github.io/assets/img/brand/yLogo.png" border="0" class="partners-logo" /></a>
-			  </div>
-			</div>
-      <div class="row">
-				<div class="col-lg">
-				  <h2 class="center partners-text">Hosted By</h2>
-				</div>
-			</div>
-			<div class="row">
-			  <div class="col-sm partners center">
-				  <a href="https://github.com/YuppieDevs/cryptoforker.github.io" target="_blank" alt="HOSTED BY GitHub Pages"><img src="media/githubpages.png" border="0" class="partners-logo" /></a>
-			  </div>
-			</div>
-			<div class="row">
-				<div class="col-lg">
-					<!-- empty-->
-				</div>
-			</div>
-		</div>
-        </div>
-	<div class="row">
-	  <div class="col-lg footer">
-		<!-- empty -->
-	  </div>
-	</div>
-  </div> <!-- content -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"  crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-121306178-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121306178-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-121306178-1');
-	</script>
-</body>
+      gtag("config", "UA-121306178-1");
+    </script>
+  </body>
 </html>

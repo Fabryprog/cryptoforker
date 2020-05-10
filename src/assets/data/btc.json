@@ -1,66 +1,22 @@
-{
-  "parentcoin": [
-    {
-      "bitcoin": [
-        {
-          "coin": [
-            {
-              "name": "Bitcoin Diamond",
-              "url": "https://blockdozer.com/insight-api/addr/",
-              "final_url": "/result",
-              "symbol": "BTD",
-              "icon": "btg.png",
-              "link": "https://blockdozer.com/insight-api/addr/",
-              "price_container": ""
-            },
-            {
-              "name": "Bitcoin Diamond",
-              "url": "https://blockdozer.com/insight-api/addr/",
-              "symbol": "BTD",
-              "icon": "btg.png",
-              "link": "https://blockdozer.com/insight-api/addr/",
-              "price_container": ""
-            },
-            {
-              "name": "Bitcoin Diamond",
-              "url": "https://blockdozer.com/insight-api/addr/",
-              "symbol": "BTD",
-              "icon": "btg.png",
-              "link": "https://blockdozer.com/insight-api/addr/",
-              "price_container": ""
-            },
-            {
-              "name": "Bitcoin Diamond",
-              "url": "https://blockdozer.com/insight-api/addr/",
-              "symbol": "BTD",
-              "icon": "btg.png",
-              "link": "https://blockdozer.com/insight-api/addr/",
-              "price_container": ""
-            },
-            {
-              "name": "Bitcoin Diamond",
-              "url": "https://blockdozer.com/insight-api/addr/",
-              "symbol": "BTD",
-              "icon": "btg.png",
-              "link": "https://blockdozer.com/insight-api/addr/",
-              "price_container": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "etuereum": [
-        {
-          "coin": [
-            { "name": "", "url": "", "icon": "", "symbol": "", "link": "" },
-            { "name": "", "url": "", "icon": "", "symbol": "", "link": "" },
-            { "name": "", "url": "", "icon": "", "symbol": "", "link": "" },
-            { "name": "", "url": "", "icon": "", "symbol": "", "link": "" },
-            { "name": "", "url": "", "icon": "", "symbol": "", "link": "" }
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "name": "Bitcoin Diamond",
+    "url": "https://blockdozer.com/insight-api/addr/",
+    "final_url": "/result",
+    "symbol": "BTD",
+    "icon": "btg.png",
+    "link": "https://blockdozer.com/insight-api/addr/",
+    "price_container": "",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Bitcoin Diamond",
+    "url": "https://blockdozer.com/insight-api/addr/",
+    "final_url": "/result",
+    "symbol": "BTD",
+    "icon": "btg.png",
+    "link": "https://blockdozer.com/insight-api/addr/",
+    "price_container": "",
+    "type": "ethereum"
+  }
+]

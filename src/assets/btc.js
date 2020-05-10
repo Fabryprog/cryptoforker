@@ -3,14 +3,49 @@
 /* axios.get("data/btc.json").then((resp) => {
   fillSelect(resp.data, addr, "bitcoin");
 }); */
+var TABLE_ROW =
+  "<tr><td>$name</td><td>$symbol</td><td>$balance</td><td>$link</td></tr>";
+var search = '<i class="fas fa-link"></i>';
 
-function fillSelect(data, addr, coin_type) {
-  $.each(data, function (i, item) {
-    json_section = "item.parentcoin." + coin_type + ".coin";
-    console.log(json_section);
-    jQuery.get(json_section + addr, function (data) {
-      console.log(data);
-    });
+function fillSelect(jsondata) {
+  jsondata.map(function () {
+    if (jsondata.type == "bitcoin") {
+      $("#bitcoin-result > tbody").html("");
+    }
+  });
+  const ret = jsondata.filter(function (dat) {
+    //dat.type === "bitcoin";
+    console.log(dat.type);
+  });
+  console.log(ret);
+}
+
+function getAndPopolaTabella() {
+  jQuery.get("https://btgexp.com/ext/getbalance/" + addr, function (data) {
+    console.log("BTG", addr, data);
+
+    row = TABLE_ROW;
+    row = row.replace(
+      "$symbol",
+      '<img src="media/btg.png" class="symbol-mini"/>'
+    );
+    row = row.replace("$name", "BitCoin Gold");
+
+    if (data.error) {
+      row = row.replace("$balance", 0 + " BTG");
+      row = row.replace("$link", "-");
+    } else {
+      row = row.replace("$balance", data + " BTG");
+      row = row.replace(
+        "$link",
+        '<a href="https://btgexp.com/address/' +
+          addr +
+          '" target="_blank">' +
+          search +
+          "</a>"
+      );
+    }
+    $("#bitcoin-result tbody").append($(row));
   });
 }
 
@@ -23,39 +58,20 @@ function main() {
   }
 
   if (addr && addr != "") {
-    fetch("https://github.com/simooooone/cryptoforker/data/btc.json")
+    fetch("assets/data/btc.json", {
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
       .then((response) => response.json())
-      .then((data) => fillSelect(data, addr, "bitcoin"))
+      .then((data) => fillSelect(data))
       .catch((err) => {
         console.log(err);
       });
-
-    /*     $.getJSON(
-      "https://github.com/simooooone/cryptoforker/data/btc.json",
-      { format: "json" },
-      function (data) {
-        fillSelect(data, addr, "bitcoin");
-      }
-    ); */
   }
 }
-/*   $.ajax({
-                              url:
-                                "https://github.com/simooooone/cryptoforker/data/btc.json",
-                              data: data,
-                              type: "GET",
-                              crossDomain: true,
-                              dataType: "jsonp",
-                              success: function () {
-                                fillSelect(data, addr, "bitcoin");
-                              },
-                              error: function () {
-                                alert("Failed!");
-                              },
-                              beforeSend: setHeader,
-                            });
-                          } */
-/* 
+
+/*
 function bitcoin() {
   var TABLE_ROW =
     "<tr><td>$name</td><td>$symbol</td><td>$balance</td><td>$link</td></tr>";

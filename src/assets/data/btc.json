@@ -2,7 +2,7 @@
   {
     "name": "Bitcoin Diamond",
     "url": "https://blockdozer.com/insight-api/addr/",
-    "final_url": "/result",
+    "end_url": "/result",
     "symbol": "BTD",
     "icon": "btg.png",
     "link": "https://blockdozer.com/insight-api/addr/",

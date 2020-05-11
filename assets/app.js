@@ -3,34 +3,39 @@ let close_cell = "</td></tr>";
 let search = '<i class="fas fa-link"></i>';
 
 function main(form) {
-  console.log(form);
+  //coin address
+  let addr = form.target[2].value;
 
-  let addr = "";
+  // if btc selected true else false
+  let isbtc = form.target[0].checked;
+
   if (!("fetch" in window)) {
     alert(
       "Non hai di un browser di ultima generazione, porocedura interrotta!"
     );
   }
 
-  if (addr && addr != "") {
+  if (addr) {
+    console.log("entrato");
     fetch("assets/data/btc.json", {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
       .then((response) => response.json())
-      .then((data) => fillSelect(data))
+      .then((data) => fillSelect(data, isbtc))
       .catch((err) => {
         console.log(err);
       });
+    $(".result-box").fadeIn(400);
+  } else {
+    $(".result-box").hide();
   }
-
-  $(".result-box").fadeIn(400);
 }
 
-function fillSelect(jsondata) {
+function fillSelect(jsondata, isbtc) {
   jsondata.forEach((element) => {
-    popolaRiga(element);
+    popolaRiga(element, isbtc);
   });
 }
 

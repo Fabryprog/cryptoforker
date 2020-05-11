@@ -74,6 +74,9 @@
         color: #4b4848;
         display: -webkit-box;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         -webkit-box-pack: center;
         justify-content: center;
         -webkit-box-align: center;
@@ -94,22 +97,37 @@
       }
 
       .page-info {
-        position: absolute;
-        top: 10%;
         text-align: center;
         color: white;
       }
 
+      * {
+        box-sizing: border-box;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      .col-md-6 {
+        float: left;
+        width: 50%;
+        padding: 0 5px;
+      }
+
+      .clear {
+        clear: both;
+      }
+
       .title-container {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         text-align: center;
         overflow: hidden;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
       }
       .title-container .title {
         -webkit-transform: translateY(-100%);
@@ -149,11 +167,9 @@
       }
 
       .field-container {
-        position: relative;
-        padding: 0;
-        margin: 0;
         border: 0;
         width: 330px;
+        margin: 15px auto;
         height: 40px;
       }
 
@@ -345,12 +361,11 @@
 
       .select-wallet {
         color: white;
-        position: absolute;
-        top: 35%;
         background-color: rgba(255, 255, 255, 0.2);
         padding: 5px;
         mso-padding-between: 5px;
         border-radius: 10px;
+        display: inline-block;
       }
 
       .wallet-icon {
@@ -602,48 +617,59 @@
         coins
       </h3>
     </div>
+    <div class="text-center container">
+      <div class="select-wallet">
+        <ul>
+          <li class="loc-caption" title="BTC">
+            <img
+              id="wallet1"
+              class="wallet-icon"
+              src="assets/ecoin-icons/BTC.svg"
+              alt="BTC"
+            />
+          </li>
+          <li class="loc-caption" title="ETH">
+            <img
+              id="wallet2"
+              class="wallet-icon"
+              src="assets/ecoin-icons/ETH.svg"
+              alt="ETH"
+            />
+          </li>
+        </ul>
 
-    <div class="select-wallet">
-      <ul>
-        <li class="loc-caption" title="BTC">
-          <img
-            id="wallet1"
-            class="wallet-icon"
-            src="assets/ecoin-icons/BTC.svg"
-            alt="BTC"
+        <form id="text-center select-coin">
+          <div class="col-md-6">
+            <input id="btc" checked type="radio" value="btc" /><br />
+            <label for="btc">BTC</label>
+          </div>
+          <div class="col-md-6">
+            <input id="eth" type="radio" value="eth" /><br />
+            <label for="eth">ETH</label>
+          </div>
+          <div class="clear"></div>
+        </form>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="container text-center">
+      <form class="field-container">
+        <label>
+          <input
+            type="text"
+            placeholder="Insert your address and press enter"
+            class="field"
           />
-        </li>
-        <li class="loc-caption" title="ETH">
-          <img
-            id="wallet2"
-            class="wallet-icon"
-            src="assets/ecoin-icons/ETH.svg"
-            alt="ETH"
-          />
-        </li>
-      </ul>
-      <form id="select-coin">
-        <input id="btc" checked="false" type="checkbox" data-coin="btc" />
-        <input id="eth" checked="false" type="checkbox" data-coin="eth" />
+        </label>
+        <div class="icons-container">
+          <div class="icon-search"></div>
+          <div class="icon-close">
+            <div class="x-up"></div>
+            <div class="x-down"></div>
+          </div>
+        </div>
       </form>
     </div>
-
-    <fieldset class="field-container">
-      <label>
-        <input
-          type="text"
-          placeholder="Insert your address and press enter"
-          class="field"
-        />
-      </label>
-      <div class="icons-container">
-        <div class="icon-search"></div>
-        <div class="icon-close">
-          <div class="x-up"></div>
-          <div class="x-down"></div>
-        </div>
-      </div>
-    </fieldset>
     <div class="title-container">
       <h1 class="title">Waiting for your public wallet address.. 👛</h1>
       <h1 class="title-down">Waiting for Explorer.. ⏳</h1>

@@ -26,11 +26,11 @@ function main() {
 
 function fillSelect(jsondata) {
   jsondata.forEach((element) => {
-    getAndPopolaTabella(element);
+    popolaRiga(element);
   });
 }
 
-function getAndPopolaTabella(element, address) {
+function popolaRiga(element, address) {
   let ret = "";
   $.get(element.url + address + element.end_url, function (data) {
     //icon of the fork

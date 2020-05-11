@@ -161,15 +161,17 @@ body.is-focus {
 
 .field-container {
   border: 0;
-  width: 330px;
+  width: 350px;
   margin: 25px auto;
   height: 40px;
+  display: inline-block;
+  position: relative;
 }
 
 .icons-container {
   position: absolute;
-  top: 11px;
-  right: -25px;
+  top: 9px;
+  right: 5px;
   width: 35px;
   height: 35px;
   overflow: hidden;
@@ -177,8 +179,8 @@ body.is-focus {
 
 .icon-close {
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: -4px;
+  left: 5px;
   width: 75%;
   height: 75%;
   opacity: 0;
@@ -207,9 +209,9 @@ body.is-focus {
   height: 100%;
   opacity: 0;
   border: 2px solid transparent;
-  border-top-color: #6078ea;
-  border-left-color: #6078ea;
-  border-bottom-color: #6078ea;
+  border-top-color: #c7d0f8;
+  border-left-color: #c7d0f8;
+  border-bottom-color: #c7d0f8;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
@@ -227,7 +229,7 @@ body.is-focus {
   left: 3px;
   width: 50%;
   height: 2px;
-  background-color: #6078ea;
+  background-color: #c7d0f8;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -239,7 +241,7 @@ body.is-focus {
   right: 0px;
   width: 50%;
   height: 2px;
-  background-color: #6078ea;
+  background-color: #c7d0f8;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
@@ -257,7 +259,7 @@ body.is-focus {
   left: 4px;
   width: 50%;
   height: 2px;
-  background-color: #6078ea;
+  background-color: #c7d0f8;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
@@ -269,7 +271,7 @@ body.is-focus {
   right: 1px;
   width: 50%;
   height: 2px;
-  background-color: #6078ea;
+  background-color: #c7d0f8;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -308,9 +310,9 @@ body.is-focus {
 }
 
 .icon-search {
-  position: relative;
-  top: 5px;
-  left: 8px;
+  position: absolute;
+  top: 0;
+  right: 8px;
   width: 50%;
   height: 50%;
   opacity: 1;

@@ -2,8 +2,10 @@ let open_cell = "<tr><td>";
 let close_cell = "</td></tr>";
 let search = '<i class="fas fa-link"></i>';
 
-function main() {
-  var addr = $("#bitcoinAddr").val() || $("#ethereumAddr").val();
+function main(form) {
+  console.log(form);
+
+  let addr = "";
   if (!("fetch" in window)) {
     alert(
       "Non hai di un browser di ultima generazione, porocedura interrotta!"
@@ -22,6 +24,8 @@ function main() {
         console.log(err);
       });
   }
+
+  $(".result-box").fadeIn(400);
 }
 
 function fillSelect(jsondata) {
@@ -50,3 +54,42 @@ function popolaRiga(element, address) {
     $("#result tbody").append(ret);
   });
 }
+
+$(document).on("ready", function () {
+  $(".result-box").hide();
+  $(".field").on("focus", function () {
+    $("body").addClass("is-focus");
+  });
+
+  $(".field").on("focus", function () {
+    $("body").addClass("is-focus");
+  });
+
+  $(".field").on("blur", function () {
+    let textLenght = $(".field").val().length;
+    if (textLenght <= 0) {
+      $("body").removeClass("is-focus is-type");
+    }
+  });
+
+  $(".field").on("keydown", function (event) {
+    $(".result-box").fadeOut(400);
+    $("body").addClass("is-type");
+    if (event.which === 8 && $(this).val() === "") {
+      $("body").removeClass("is-type");
+    }
+    let textLenght = $(".field").val().length - 1;
+    if (textLenght <= 0) {
+      $("body").removeClass("is-focus is-type");
+    }
+  });
+
+  $("#form-search").submit(function (e) {
+    e.preventDefault();
+    main(e);
+  });
+
+  $("#close-result").click(function () {
+    $(".result-box").fadeOut(400);
+  });
+});

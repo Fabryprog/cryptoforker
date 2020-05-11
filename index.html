@@ -13,7 +13,6 @@
       rel="stylesheet"
       href="assets/style.css"
     />
-    
   </head>
   <body translate="no">
     <img src="media/logo-no-bg.png" class="project-logo" alt="Project Logo" />
@@ -88,7 +87,7 @@
     </div>
     <div class="text-center container">
       
-        <form id="text-center select-coin">
+        <form id="form-search" class="text-center select-coin" action="#" method="GET">
           <div class="select-wallet">
           <div class="col-md-6">
             <ul>
@@ -121,20 +120,21 @@
           </div>
           <div class="clear"></div>
           <div class="container text-center field-container">
-              <label>
+              <label class="search-field">
                 <input
                   type="text"
                   placeholder="Insert your address and press enter"
                   class="field"
                 />
-              </label>
-              <div class="icons-container">
+                <div class="icons-container">
                 <div class="icon-search"></div>
                 <div class="icon-close">
                   <div class="x-up"></div>
                   <div class="x-down"></div>
                 </div>
               </div>
+              </label>
+              
           </div>
         </form>
       </div>
@@ -180,42 +180,8 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script id="rendered-js">
-      $(document).on("ready", function () {
-        $(".field").on("focus", function () {
-          $("body").addClass("is-focus");
-        });
 
-        $(".field").on("focus", function () {
-          $("body").addClass("is-focus");
-        });
-
-        $(".field").on("blur", function () {
-          let textLenght = $(".field").val().length;
-          if (textLenght <= 0) {
-            $("body").removeClass("is-focus is-type");
-          }
-        });
-
-        $(".field").on("keydown", function (event) {
-          $("body").addClass("is-type");
-          if (event.which === 8 && $(this).val() === "") {
-            $("body").removeClass("is-type");
-          }
-          let textLenght = $(".field").val().length - 1;
-          if (textLenght <= 0) {
-            $("body").removeClass("is-focus is-type");
-          }
-        });
-      });
-
-      $(document).ready(function () {
-        $(".result-box").fadeOut(400);
-      });
-
-      $("#close-result").click(function () {
-        $(".result-box").fadeOut(400);
-      });
-    </script>
+    <script src="assets/app.js"></script>
+    
   </body>
 </html>

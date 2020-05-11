@@ -1,7 +1,3 @@
-let open_cell = "<tr><td>";
-let close_cell = "</td></tr>";
-let search = '<i class="fas fa-link"></i>';
-
 function main(form) {
   //coin address
   let addr = form.target[2].value;
@@ -16,7 +12,6 @@ function main(form) {
   }
 
   if (addr) {
-    console.log("entrato");
     fetch("assets/data/btc.json", {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -24,25 +19,35 @@ function main(form) {
     })
       .then((response) => response.json())
       .then((data) => fillSelect(data, isbtc))
+      .then($(".result-box").fadeIn(400))
       .catch((err) => {
         console.log(err);
       });
-    $(".result-box").fadeIn(400);
   } else {
     $(".result-box").hide();
   }
 }
 
 function fillSelect(jsondata, isbtc) {
-  jsondata.forEach((element) => {
-    popolaRiga(element, isbtc);
+  let coin = isbtc ? "bitcoin" : "ethereum";
+
+  let data = jsondata.filter(function (element) {
+    return element.type == coin;
+  });
+
+  data.forEach((element) => {
+    popolaRiga(element);
   });
 }
 
 function popolaRiga(element, address) {
+  let open_cell = "<tr><td>";
+  let close_cell = "</td></tr>";
   let ret = "";
+
   $.get(element.url + address + element.end_url, function (data) {
     //icon of the fork
+    console.log("entrato");
     ret = `${open_cell}<img src="${element.icon}" class="symbol-mini"/>${close_cell}`;
     //name of the fork
     ret += `${open_cell} ${element.name} ${close_cell}`;
@@ -56,7 +61,7 @@ function popolaRiga(element, address) {
       ret += `${open_cell} ${data} ${element.symbol} ${close_cell}`;
       ret += `${open_cell} '<a href="${element.url}${address}${element.end_url}" target="_blank">view on main site</a> ${open_cell} ${close_cell}`;
     }
-    $("#result tbody").append(ret);
+    $("#rwd-table").append(ret);
   });
 }
 

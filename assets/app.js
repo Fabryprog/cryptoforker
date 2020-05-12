@@ -18,7 +18,7 @@ function main(form) {
       },
     })
       .then((response) => response.json())
-      .then((data) => fillSelect(data, isbtc))
+      .then((data) => fillSelect(data, isbtc, addr))
       .then($(".result-box").fadeIn(400))
       .catch((err) => {
         console.log(err);
@@ -28,7 +28,7 @@ function main(form) {
   }
 }
 
-function fillSelect(jsondata, isbtc) {
+function fillSelect(jsondata, isbtc, addr) {
   let coin = isbtc ? "bitcoin" : "ethereum";
 
   let data = jsondata.filter(function (element) {
@@ -36,33 +36,41 @@ function fillSelect(jsondata, isbtc) {
   });
 
   data.forEach((element) => {
-    popolaRiga(element);
+    popolaRiga(element, addr);
   });
 }
 
-function popolaRiga(element, address) {
-  let open_cell = "<tr><td>";
-  let close_cell = "</td></tr>";
+function popolaRiga(element, addr) {
+  let open_row = "<tr><td>";
+  let open_cell = "<td>";
+  let close_cell = "</td>";
+  let close_row = "</td></tr>";
   let ret = "";
+  let link = element.link.replace("${addr}", addr);
 
-  $.get(element.url + address + element.end_url, function (data) {
-    //icon of the fork
-    console.log("entrato");
-    ret = `${open_cell}<img src="${element.icon}" class="symbol-mini"/>${close_cell}`;
-    //name of the fork
-    ret += `${open_cell} ${element.name} ${close_cell}`;
+  $.get(element.url.replace("${addr}", addr), function (data) {
+    ret += `${open_row} ${element.name} ${close_cell}`;
+    ret += `${open_cell} <img src="assets/media/${element.icon}" class="symbol-mini"/>${close_cell}`;
 
     if (data.error) {
       //balance 0 for current address
-      ret += `${open_cell} 0 ${close_cell}`;
-      ret += `${open_cell} - ${close_cell}`;
+      ret += `${open_cell} 0 ${element.symbol} ${close_cell}`;
+      ret += `${open_cell} - ${close_row}`;
     } else {
+      debugger;
+      console.log(data);
       //balance for current address
-      ret += `${open_cell} ${data} ${element.symbol} ${close_cell}`;
-      ret += `${open_cell} '<a href="${element.url}${address}${element.end_url}" target="_blank">view on main site</a> ${open_cell} ${close_cell}`;
+      ret += `${open_cell} ${eval(data + "." + element.total_element)} ${
+        element.symbol
+      } ${close_cell}`;
+      ret += `${open_cell} <a href="${link} target="_blank" class="table-link">view &rsaquo;</a> ${close_row}`;
     }
-    $("#rwd-table").append(ret);
+    $(".rwd-table").append(ret);
   });
+}
+
+function eval_tree(tree) {
+  return Function("" + tree + "")();
 }
 
 $(document).on("ready", function () {

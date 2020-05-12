@@ -571,3 +571,11 @@ li img {
 .hidden {
   display: none;
 }
+.symbol-mini {
+  max-width: 45px;
+}
+
+.table-link {
+  color: #fff;
+  text-decoration: none;
+}

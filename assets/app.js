@@ -48,19 +48,28 @@ function popolaRiga(element, addr) {
   let ret = "";
   let link = element.link.replace("${addr}", addr);
 
-  $.get(element.url.replace("${addr}", addr), function (data) {
+  $.get(element.url.replace("${addr}", addr), function (dato) {
     ret += `${open_row} ${element.name} ${close_cell}`;
     ret += `${open_cell} <img src="assets/media/${element.icon}" class="symbol-mini"/>${close_cell}`;
-    if (data.error) {
+    if (dato.error) {
       //balance 0 for current address
       ret += `${open_cell} 0 ${element.symbol} ${close_cell}`;
       ret += `${open_cell} - ${close_row}`;
       $(".rwd-table").append(ret);
     } else {
+      ret += `${open_cell}`;
+      debugger;
+      console.log(dato);
+      switch (element.symbol) {
+        case "BCH":
+          ret += `${dato.data.data.opera.address.balance} ${element.symbol}`;
+        case "BTC":
+          ret += `${dato / 1000} ${element.symbol}`;
+      }
+
+      ret += `${close_cell}`;
       //balance for current address
-      ret += `${open_cell} ${eval(data + "." + element.total_element)} ${
-        element.symbol
-      } ${close_cell}`;
+
       ret += `${open_cell} <a href="${link}" target="_blank" class="table-link">view &rsaquo;</a> ${close_row}`;
       $(".rwd-table").append(ret);
     }

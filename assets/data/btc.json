@@ -67,7 +67,7 @@
     "name": "Ethereum",
     "url": "https://blockdozer.com/insight-api/addr/${addr}",
     "symbol": "ETH",
-    "icon": "eth.png",
+    "icon": "ethereum.png",
     "link": "https://blockdozer.com/insight-api/addr/${addr}",
     "total_element": "",
     "type": "ethereum"

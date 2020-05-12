@@ -1,16 +1,76 @@
 [
   {
-    "name": "Bitcoin Diamond",
-    "url": "https://blockdozer.com/insight-api/addr/",
-    "end_url": "/result",
-    "symbol": "BTD",
-    "icon": "btg.png",
-    "link": "https://blockdozer.com/insight-api/addr/",
+    "name": "Segwit2X",
+    "url": "https://explorer.b2x-segwit.io/b2x-insight-api/addr/${addr}/?noTxList=1",
+    "end_url": "",
+    "symbol": "B2X",
+    "icon": "b2x.svg",
+    "link": "https://explorer.b2x-segwit.io/address/",
     "price_container": "",
     "type": "bitcoin"
   },
   {
     "name": "Bitcoin Diamond",
+    "url": "http://52.187.7.191:3001/insight-api/addr/${addr}/?noTxList=1",
+    "end_url": "",
+    "symbol": "BCD",
+    "icon": "bcd.png",
+    "link": "http://explorer.btcd.io/#/address?loading=true&address=${addr}",
+    "price_container": "",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Bitcoin Cash",
+    "url": "http://api.blockchair.com/bitcoin-cash/dashboards/address/${addr}",
+    "end_url": "",
+    "symbol": "BCH",
+    "icon": "bch.png",
+    "link": "https://blockchair.com/bitcoin-cash/address/${addr}",
+    "price_container": "",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Bitcoin",
+    "url": "https://blockchain.info/q/addressbalance/${addr}",
+    "end_url": "",
+    "symbol": "BTC",
+    "icon": "btc.png",
+    "link": "https://blockchair.com/bitcoin/address/${addr}",
+    "price_container": "",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Bitcore",
+    "url": "http://chainz.cryptoid.info/btx/api.dws?q=getbalance&a=${addr}",
+    "end_url": "",
+    "symbol": "BTX",
+    "icon": "btx.png",
+    "link": "https://chainz.cryptoid.info/btx/address.dws?${addr}.htm",
+    "price_container": "",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Superbitcoin",
+    "url": "http://block.superbtc.org/insight-api/addr/${addr}/?noTxList=1",
+    "end_url": "",
+    "symbol": "SBTC",
+    "icon": "sbtc.png",
+    "link": "http://block.superbtc.org/address/${addr}",
+    "price_container": "",
+    "type": "bitcoin"
+  },
+  {
+    "name": "United Bitcoin",
+    "url": "https://main.ub.com/portals/blockexplore/address/${addr}?pageNo=1&pageSize=5",
+    "end_url": "",
+    "symbol": "UBTC",
+    "icon": "btx.png",
+    "link": "https://www.ub.com/explorer/address?address=${addr}",
+    "price_container": "",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Ethereum",
     "url": "https://blockdozer.com/insight-api/addr/",
     "final_url": "/result",
     "symbol": "BTD",

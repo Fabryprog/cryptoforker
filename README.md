@@ -9,7 +9,7 @@ To run site locally you can use:
 ## Docker
 
 ```
-docker run --rm --name cryptosever -p 80:80 -v $(pwd):/usr/share/nginx/html:ro -v $(pwd)/assets/docker/default.conf:/etc/nginx/conf.d/default.conf:ro -d nginx
+docker run --rm --name cryptoforks -p 80:80 -v $(pwd):/usr/share/nginx/html:ro -v $(pwd)/assets/docker/default.conf:/etc/nginx/conf.d/default.conf:ro -d nginx
 ```
 
 ## NodeJS

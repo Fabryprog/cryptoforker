@@ -58,13 +58,18 @@ function popolaRiga(element, addr) {
       $(".rwd-table").append(ret);
     } else {
       ret += `${open_cell}`;
-      debugger;
-      console.log(dato);
+
       switch (element.symbol) {
         case "BCH":
-          ret += `${dato.data.data.opera.address.balance} ${element.symbol}`;
+          //const data = Object.keys(dato.data)[0];
+          //console.log(data);
+          ret += `${dato.data} ${element.symbol}`;
         case "BTC":
-          ret += `${dato / 1000} ${element.symbol}`;
+          ret += `${dato / 100000000} ${element.symbol}`;
+        case "SBTC":
+          ret += `${dato.balance} ${element.symbol}`;
+        default:
+          break;
       }
 
       ret += `${close_cell}`;
@@ -76,16 +81,8 @@ function popolaRiga(element, addr) {
   });
 }
 
-function eval_tree(tree) {
-  return Function("" + tree + "")();
-}
-
-$(document).on("ready", function () {
+$(document).ready(function () {
   $(".result-box").hide();
-  $(".field").on("focus", function () {
-    $("body").addClass("is-focus");
-  });
-
   $(".field").on("focus", function () {
     $("body").addClass("is-focus");
   });

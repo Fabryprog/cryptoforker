@@ -1,23 +1,5 @@
 [
   {
-    "name": "Segwit2X",
-    "url": "https://explorer.b2x-segwit.io/b2x-insight-api/addr/${addr}/?noTxList=1",
-    "symbol": "B2X",
-    "icon": "b2x.svg",
-    "link": "https://explorer.b2x-segwit.io/address/",
-    "total_element": "",
-    "type": "bitcoin"
-  },
-  {
-    "name": "Bitcoin Diamond",
-    "url": "http://52.187.7.191:3001/insight-api/addr/${addr}/?noTxList=1",
-    "symbol": "BCD",
-    "icon": "bcd.png",
-    "link": "http://explorer.btcd.io/#/address?loading=true&address=${addr}",
-    "total_element": "",
-    "type": "bitcoin"
-  },
-  {
     "name": "Bitcoin Cash",
     "url": "http://api.blockchair.com/bitcoin-cash/dashboards/address/${addr}",
     "symbol": "BCH",
@@ -36,29 +18,11 @@
     "type": "bitcoin"
   },
   {
-    "name": "Bitcoin Core",
-    "url": "http://chainz.cryptoid.info/btx/api.dws?q=getbalance&a=${addr}",
-    "symbol": "BTX",
-    "icon": "bitcoin-core.png",
-    "link": "https://chainz.cryptoid.info/btx/address.dws?${addr}.htm",
-    "total_element": "",
-    "type": "bitcoin"
-  },
-  {
     "name": "Superbitcoin",
     "url": "http://block.superbtc.org/insight-api/addr/${addr}/?noTxList=1",
     "symbol": "SBTC",
     "icon": "bitcoin.png",
     "link": "http://block.superbtc.org/address/${addr}",
-    "total_element": "",
-    "type": "bitcoin"
-  },
-  {
-    "name": "United Bitcoin",
-    "url": "https://main.ub.com/portals/blockexplore/address/${addr}?pageNo=1&pageSize=5",
-    "symbol": "UBTC",
-    "icon": "btx.png",
-    "link": "http://ub.com/explorer/address?address=${addr}",
     "total_element": "",
     "type": "bitcoin"
   },

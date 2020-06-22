@@ -11,7 +11,6 @@ function bitcoin() {
     console.log("dentro bitcoin", addr);
     $("#bitcoin-result").show();
 
-    
     jQuery.get("https://btgexp.com/ext/getbalance/" + addr, function (data) {
       console.log("BTG", addr, data);
 
@@ -37,7 +36,7 @@ function bitcoin() {
         );
       }
       $("#bitcoin-result tbody").append($(row));
-    }); 
+    });
 
     $.get(
       "https://blockdozer.com/insight-api/addr/" + addr + "/balance",
@@ -66,7 +65,7 @@ function bitcoin() {
         }
         $("#bitcoin-result tbody").append($(row));
       }
-    ); 
+    );
 
     $.get("http://52.187.7.191:3001/insight-api/addr/" + addr, function (data) {
       console.log("BCD", addr, data);
@@ -93,9 +92,8 @@ function bitcoin() {
         );
       }
       $("#bitcoin-result tbody").append($(row));
-    }); 
+    });
 
-    
     $.get("https://insight.bitcore.cc/api/addr/" + addr + "/balance", function (
       data
     ) {
@@ -156,4 +154,4 @@ function bitcoin() {
       }
     );
   }
-}*/
+}

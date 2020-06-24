@@ -51,6 +51,8 @@ function popolaRiga(element, addr) {
   $.get(element.url.replace("${addr}", addr), function (dato) {
     ret += `${open_row} ${element.name} ${close_cell}`;
     ret += `${open_cell} <img src="assets/media/${element.icon}" class="symbol-mini"/>${close_cell}`;
+    //let cloneObj = new Map(dato);
+
     if (dato.error) {
       //balance 0 for current address
       ret += `${open_cell} 0 ${element.symbol} ${close_cell}`;
@@ -61,13 +63,18 @@ function popolaRiga(element, addr) {
 
       switch (element.symbol) {
         case "BCH":
-          //const data = Object.keys(dato.data)[0];
-          //console.log(data);
-          ret += `${dato.data} ${element.symbol}`;
+          /*let cloneObj = new Map(dato);
+          console.log(cloneObj);**/
+          console.log("dato", dato.data[addr].address);
+          ret += `${dato.data[addr].address.balance} ${element.symbol}`;
+          console.log("dato2", dato.data[addr]);
+          break;
         case "BTC":
           ret += `${dato / 100000000} ${element.symbol}`;
+          break;
         case "SBTC":
           ret += `${dato.balance} ${element.symbol}`;
+          break;
         default:
           break;
       }

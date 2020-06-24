@@ -73,7 +73,7 @@ function popolaRiga(element, addr) {
           ret += `${dato / 100000000} ${element.symbol}`;
           break;
         case "SBTC":
-          ret += `${dato.balance} ${element.symbol}`;
+          ret += `${dato.balance / 100000000} ${element.symbol}`;
           break;
         default:
           break;

@@ -5,7 +5,6 @@
     "symbol": "BCH",
     "icon": "bcc.jpg",
     "link": "https://blockchair.com/bitcoin-cash/address/${addr}",
-    "total_element": "data.data.opera.address.balance",
     "type": "bitcoin"
   },
   {
@@ -14,7 +13,6 @@
     "symbol": "BTC",
     "icon": "bitcoin.png",
     "link": "https://blockchair.com/bitcoin/address/${addr}",
-    "total_element": "",
     "type": "bitcoin"
   },
   {
@@ -23,7 +21,6 @@
     "symbol": "SBTC",
     "icon": "bitcoin.png",
     "link": "http://block.superbtc.org/address/${addr}",
-    "total_element": "",
     "type": "bitcoin"
   },
   {
@@ -32,7 +29,6 @@
     "symbol": "ETH",
     "icon": "ethereum.png",
     "link": "https://blockdozer.com/insight-api/addr/${addr}",
-    "total_element": "",
     "type": "ethereum"
   }
 ]

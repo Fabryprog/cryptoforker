@@ -63,11 +63,7 @@ function popolaRiga(element, addr) {
 
       switch (element.symbol) {
         case "BCH":
-          /*let cloneObj = new Map(dato);
-          console.log(cloneObj);**/
-          console.log("dato", dato.data[addr].address);
           ret += `${dato.data[addr].address.balance} ${element.symbol}`;
-          console.log("dato2", dato.data[addr]);
           break;
         case "BTC":
           ret += `${dato / 100000000} ${element.symbol}`;

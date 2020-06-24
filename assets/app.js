@@ -71,6 +71,9 @@ function popolaRiga(element, addr) {
         case "SBTC":
           ret += `${dato.balance / 100000000} ${element.symbol}`;
           break;
+        case "ETH":
+          ret += `${dato.balance / 100000000} ${element.symbol}`;
+          break;
         default:
           break;
       }

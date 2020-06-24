@@ -72,7 +72,8 @@ function popolaRiga(element, addr) {
           ret += `${dato.balance / 100000000} ${element.symbol}`;
           break;
         case "ETH":
-          ret += `${dato.balance / 100000000} ${element.symbol}`;
+          // TODO
+          // ret += `${dato.balance / 100000000} ${element.symbol}`;
           break;
         default:
           break;

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Bitcoin Cash",
+    "url": "http://api.blockchair.com/bitcoin-cash/dashboards/address/${addr}",
+    "symbol": "BCH",
+    "icon": "bcc.jpg",
+    "link": "https://blockchair.com/bitcoin-cash/address/${addr}",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Bitcoin",
+    "url": "https://blockchain.info/q/addressbalance/${addr}",
+    "symbol": "BTC",
+    "icon": "bitcoin.png",
+    "link": "https://blockchair.com/bitcoin/address/${addr}",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Superbitcoin",
+    "url": "http://block.superbtc.org/insight-api/addr/${addr}/?noTxList=1",
+    "symbol": "SBTC",
+    "icon": "bitcoin.png",
+    "link": "http://block.superbtc.org/address/${addr}",
+    "type": "bitcoin"
+  },
+  {
+    "name": "Ethereum",
+    "url": "https://blockdozer.com/insight-api/addr/${addr}",
+    "symbol": "ETH",
+    "icon": "ethereum.png",
+    "link": "https://blockdozer.com/insight-api/addr/${addr}",
+    "type": "ethereum"
+  }
+]
